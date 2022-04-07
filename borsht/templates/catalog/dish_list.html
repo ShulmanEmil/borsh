@@ -1,0 +1,58 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="catalog">
+  <div class="variable-width">
+      {% for category in categories %}
+      <div><a href="{{ category.title }}"><p>{{ category.title }}</p></a></div>
+      {% endfor %}
+    </div>
+</div>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Главная</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Каталог</li>
+  </ol>
+</nav>
+<h1>Каталог</h1>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+ {% for dish in dish_list %}
+ <div class="col">
+   <div class="card ">
+     <img src="{{ dish.img.url }}" alt="...">
+     <div class="card-body">
+       <h5 class="card-title">{{ dish }}</h5>
+       <img class="card-avatar" src="/images/upload/avatars/{{ dish.user }}.jpg" alt="...">
+       <p class="card-category">{% for category in dish.category.all %} {{ category }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+       <p class="card-time">{{ dish.cooking_time|date:'G\h i\m' }}</p>
+       <p class="card-price">{{ dish.price }} &#8381;</p>
+       <div class="card-favorite">
+       {% if user.is_authenticated %}
+       {% include 'user_profile/favorites.html' with dish_id=dish.id %}
+       {% endif %}
+       </div>
+     </div>
+   </div>
+ </div>
+  {% endfor %}
+</div>
+<button type="button" class="btn btn-secondary">Показать еще блюда...</button>
+{% load static %}
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="{% static 'slick/slick.min.js' %}"></script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.variable-width').slick({
+      dots: false,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 1,
+      centerMode: false,
+      variableWidth: true,
+      prevArrow: false
+    });
+  });
+</script>
+{% endblock %}

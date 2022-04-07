@@ -1,0 +1,23 @@
+{% load favorites %}
+
+{% is_favorite dish_id as is_favorite_bool %}
+
+{% if is_favorite_bool %}
+    {% dish_favorite_id dish_id as dish_favorite_id %}
+{% endif %}
+
+<form action="{% if not is_favorite_bool %}{% url 'favorite:add' %}{% else %}{% url 'favorite:remove' %}{% endif %}" method="post">
+  {% csrf_token %}
+  <input type="hidden" name="dish_id" value="{{ dish_id }}">
+  <input type="hidden" name="user_id" value="{% if user.is_authenticated %}{{ request.user.id }}{% else %}None{% endif %}">
+  <input type="hidden" name="url_from" value="{{ request.path }}">
+
+  {% if is_favorite_bool %}
+      <input type="hidden" name="dish_favorite_id" value="{{ dish_favorite_id }}">
+  {% endif %}
+  {% if not is_favorite_bool %}
+  <button class="favorite-off" type="submit">
+  {% else %}
+  <button class="favorite-on" type="submit">
+  {% endif %}
+</form>

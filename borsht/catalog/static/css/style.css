@@ -1,0 +1,267 @@
+@font-face {
+  font-family: SpecialFont;
+  src: local("../fonts/MontserratAlternates-Medium.ttf"), url("../fonts/MontserratAlternates-Medium.ttf") format("truetype");
+}
+
+body {
+    font-family: 'SpecialFont', sans-serif;
+}
+
+.container-xxl {
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+h1 {
+	color: #575252;
+	font-weight: bold;
+}
+
+.bg-light {
+  background-color: #ffffff!important;
+}
+
+.navbar {
+	margin-bottom: 20px;
+	padding-top: 20px;
+}
+
+.navbar-brand {
+	margin-left: 1%;
+	margin-right: 3%;
+}
+
+.nav-forms {
+	width: 30%;
+	margin-right: 2%;
+}
+
+.nav-forms form {
+  position: relative;
+}
+
+.nav-forms input {
+  display: block;
+  width: 100%;
+  height: 3em;
+	background: #E5E5E5;
+	border-radius: 10px;
+	border: none;
+	padding-left: 3em;
+}
+
+.nav-forms button {
+  position: absolute;
+  top: .4em;
+  left: .4em;
+  height: 2.2em;
+	border: none;
+	background: #E5E5E5;
+}
+
+.container-fluid {
+	padding-right: 0px;
+	width: auto;
+	margin-right: 0px;
+}
+
+.navbar-nav {
+	background: #E5E5E5;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	flex-direction: unset;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+	padding-left: 2.5rem;
+	padding-right: 1rem;
+}
+
+
+.login {
+	background: url("https://img.icons8.com/material-rounded/24/000000/user.png") no-repeat 10% 50%;
+	border-right: 1px solid;
+	border-color: #575252;
+}
+
+.basket {
+	background: url("https://img.icons8.com/material-outlined/24/000000/shopping-basket-2.png") no-repeat 10% 50%;
+}
+
+.catalog {
+	height: 3em;
+	background: #E5E5E5;
+	width: 100%;
+	border-radius: 10px;
+	margin-bottom: 20px;
+}
+
+.catalog nav {
+	height: 100%;
+}
+
+.catalog .pagination-lg .page-link{
+	color: #353333;
+	background: None;
+	font-size: 90%;
+}
+
+.slick-slider {
+	width: 80%;
+	left: 16%;
+	height: 100%;
+}
+
+.slick-slider p {
+	margin-right: 1em;
+	line-height: 3em;
+}
+
+.slick-slider a {
+	text-decoration: none;
+	color: #353333;
+}
+
+.slick-slider a:hover {
+	color: #5c5a5a;
+}
+
+.breadcrumb {
+	background-color: #ffffff;
+}
+
+.card {
+	width: 30em;
+	/* min-width: 22em; */
+	max-width: 22em;
+	height: 16em;
+	margin-bottom: 8%;
+}
+
+.card-body {
+	padding: 0px;
+}
+
+.card p {
+	padding-bottom: 0px;
+}
+
+.card img {
+	position: absolute;
+	top: 37%;
+	left: 50%;
+	transform:translate(-50%,-50%);
+	height:188px;
+	width: 100%;
+	object-fit:cover;
+}
+
+.card-title {
+  position: absolute;
+  bottom: 10%;
+  left: 32%;
+	font-size: 18px;
+}
+
+.card-avatar {
+	top: 80%!important;
+	left: 15%!important;
+	height: 40%!important;
+	width: 30%!important;
+	border-radius: 50px 50px 50px 4px;
+}
+
+.card-price {
+  position: absolute;
+  bottom: 1px;
+	margin-bottom: 2%;
+  right: 4%;
+	color: #65BD73;
+	background-color: #f1ffee;
+	padding: 2px 16px 0px 16px;
+	border: solid 1px #65BD73;
+	border-radius: 10px;
+}
+
+.card-category {
+	position: absolute;
+	bottom: 4px;
+	left: 32%;
+	margin-bottom: 0px;
+	font-size: 13px;
+}
+
+.card-time {
+	position: absolute;
+	bottom: 1px;
+	margin-bottom: 22%;
+	right: 4%;
+	color: #65BD73;
+	background-color: #ffffff;
+	padding: 1px 30px 0px 30px;
+	border: solid 1px #65BD73;
+	border-radius: 10px;
+	font-size: 14px;
+}
+
+.card-favorite {
+	position: absolute;
+	right: 2%;
+	top: 1%;
+}
+
+.favorite-off {
+	width: 40px;
+	height: 40px;
+	border: none;
+	background: url("https://img.icons8.com/ios-filled/40/ffffff/hearts.png");
+}
+
+.favorite-on {
+	width: 40px;
+	height: 40px;
+	border: none;
+	background: url("https://img.icons8.com/ios-filled/40/E74C3C/hearts.png");
+}
+
+.btn-secondary {
+	width: 100%;
+	background-color: #575252;
+}
+
+.btn-secondary:hover {
+	background-color: #575252;
+}
+
+#okno {
+	width: 300px;
+	height: 500px;
+	text-align: center;
+	padding: 15px;
+	border-radius: 10px;
+	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	z-index:99999999;
+	position: absolute;
+	background-color: #ffffff;
+}
+#okno:target {display: block;}
+.close {
+	display: block;
+	color: #0000cc;
+	padding: 0 12px;
+	margin: 10px;
+	text-decoration: none;
+	background: #f2f2f2;
+	font-size: 14pt;
+	cursor:pointer;
+	position: absolute;
+	z-index:99999999;
+}
+.close:hover {background: #e6e6ff;}
